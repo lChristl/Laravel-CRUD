@@ -58,7 +58,7 @@ class StudentController extends Controller
                 'required', 
                 'string', 
                 'max:50', 
-                Rule::unique('students', 'student_number') >ignore($student->id), 
+                Rule::unique('students', 'student_number') ->ignore($student->id), 
             ], 
             'first_name' => 'required|string|max:255', 
             'last_name' => 'required|string|max:255', 
@@ -66,7 +66,7 @@ class StudentController extends Controller
                 'required', 
                 'email', 
                 'max:255', 
-                Rule::unique('students', 'email') >ignore($student->id), 
+                Rule::unique('students', 'email') ->ignore($student->id), 
             ], 
             'course' => 'required|string|max:255', 
         ]); 
